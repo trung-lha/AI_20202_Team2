@@ -10,8 +10,8 @@
             <nav style="text-align: right">
                 <a href="#about" ><u>About Us</u></a>
                 <a href="#" ><u>Introduction</u></a>
-                <a href="register.html" ><u>Register</u></a>
-                <a href="login.html"><u>Login</u></a>
+                <a href="{{ Route('register') }}" ><u>Register</u></a>
+                <a href="{{ Route('login') }}"><u>Login</u></a>
                 </ul>
             </nav>
         </h3>
