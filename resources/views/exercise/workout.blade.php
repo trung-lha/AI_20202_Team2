@@ -33,16 +33,18 @@
                             <th>Times</th>                           
                         </tr>
                     </tfoot>
-                    @foreach ($exercises as $key => $eItem)
+                    
                     <tbody>
+                        @foreach ($exercises as $key => $eItem)
                         <tr>
                             <td>{{$key+1}}</td>
                             <td>{{$eItem->name}}</td>   
                             <td>{{$eItem->counts}}</td>
                             <td>{{$eItem->time}}</td>
                         </tr>
+                        @endforeach
                     </tbody>
-                    @endforeach
+                    
                     
                 </table>
             </div>
@@ -52,3 +54,4 @@
 </div>
 
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
