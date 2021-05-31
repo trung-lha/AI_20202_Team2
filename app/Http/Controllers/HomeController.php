@@ -47,7 +47,27 @@ class HomeController extends Controller
 
     public function exercise_save(Request $request)
     {
-        // dd($request->all());
+        
+        $data = Workout::where([
+                ['user_id',Auth::user()->id],['exercise_id',$request->exercise_id]
+            ])->get();
+        if(empty($data->all())){
+            $data[] = [
+                'user_id' => Auth::user()->id,
+                'exercise_id' => $request->exercise_id,
+                'counts' => $request->counter,
+                'time' => 1
+            ];
+            Workout::insert($data[0]);
+        }else{
+            $data[0]->counts += $request->counter;
+            $data[0]->time +=1; 
+            Workout::where([
+                ['user_id',Auth::user()->id],['exercise_id',$request->exercise_id]
+            ])->update($data[0]->toArray());
+        }
+        
+        // dd($data[0]);
         return \redirect()->action([HomeController::class, 'workout']);
     }
 

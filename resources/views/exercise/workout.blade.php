@@ -40,7 +40,6 @@
                             <td>{{$eItem->name}}</td>   
                             <td>{{$eItem->counts}}</td>
                             <td>{{$eItem->time}}</td>
-
                         </tr>
                     </tbody>
                     @endforeach

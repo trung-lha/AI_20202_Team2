@@ -38,12 +38,17 @@
         </div>
     </div>
     <div>
-        <a href="{{route('exercise-save')}}" class="btn btn-danger btn-icon-split" style="align-content: center; margin: 0 0 0 1em">
-            <span class="icon text-white-50">
-                <i class="fas fa-stopwatch"></i>
-            </span>
-            <span class="text">Stop exercise</span>
-        </a>
+        <form class="user" id="save_form" method="POST" action="{{ route('exercise-save') }}">
+            @csrf
+            <input type="hidden" id="count_save" name="counter">
+            <input type="hidden" id="exercise_id" name="exercise_id" value="{{$detail[0]->exercise_id}}">
+            <a ref="javascript:{}" onclick="document.getElementById('save_form').submit();" class="btn btn-danger btn-icon-split" style="align-content: center; margin: 0 0 0 1em">
+                <span class="icon text-white-50">
+                    <i class="fas fa-stopwatch"></i>
+                </span>
+                <span>Stop exercise</span>
+            </a>
+        </form>
     </div>
     
     <script>
@@ -149,7 +154,9 @@
                 // console.log(stage + ", ", counter);
             }
             console.log("Angle: " + angle + ", Stage: " + stage + ", ", counter);
-    
+            
+            document.getElementById("count_save").setAttribute('value', counter);
+
             canvasCtx.font = "30px Arial";
             canvasCtx.fillStyle = "red";
             canvasCtx.fillText(stage + ": " + counter.toString(), 1100, 50);
