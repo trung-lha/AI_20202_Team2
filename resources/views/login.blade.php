@@ -31,7 +31,7 @@
                                             <input id="email" type="email"
                                                 class="form-control form-control-user @error('email') is-invalid @enderror"
                                                 name="email" value="{{ old('email') }}"
-                                                placeholder="Enter Email Address... required autocomplete=" email"
+                                                placeholder="Enter Email Address..." required autocomplete="email"
                                                 autofocus>
 
                                             @error('email')
@@ -61,7 +61,7 @@
                                             </div>
                                         </div>
                                         <a ref="javascript:{}" onclick="document.getElementById('login_form').submit();" class="btn btn-primary btn-user btn-block">
-                                            Login
+                                            <span style="color: black">Login</span>
                                         </a>
                                     </form>
                                     <hr>
