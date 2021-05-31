@@ -53,11 +53,12 @@ class HomeController extends Controller
 
     public function workout()
     {   
-        $workout = Workout::
-            join('exercises','workout.exercise_id','=','exercises.exercise_id')
-            ->where('user_id',Auth::user()->id)->get()->toArray();
+        $exercises = Exercise::
+            leftjoin('workout','exercises.exercise_id','=','workout.exercise_id')
+            ->where('workout.user_id',Auth::user()->id)
+            ->orderBy('exercises.exercise_id')->get();
         
-        $exercises = Exercise::get();
-        return view('exercise\workout', compact('workout','exercises'));
+        // dd($exercises);
+        return view('exercise\workout', compact('exercises'));
     }
 }

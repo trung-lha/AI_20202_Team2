@@ -27,19 +27,20 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>No.</th>       
+                            <th>No.</th>   
                             <th>Name</th>
                             <th>Count</th>
-                            <th>Office</th>                           
+                            <th>Times</th>                           
                         </tr>
                     </tfoot>
-                    @foreach ($exercises as $key => $exer)
+                    @foreach ($exercises as $key => $eItem)
                     <tbody>
                         <tr>
                             <td>{{$key+1}}</td>
-                            <td>{{$exer->name}}</td>
-                            {{-- <td>{{$workout[$key].counts}}</td> --}}
-                            {{-- <td>{{$workout[$key].time}}</td> --}}
+                            <td>{{$eItem->name}}</td>   
+                            <td>{{$eItem->counts}}</td>
+                            <td>{{$eItem->time}}</td>
+
                         </tr>
                     </tbody>
                     @endforeach
