@@ -21,7 +21,7 @@ class ExercisesSeeder extends Seeder
             'description' => "Hai tay nắm thanh tạ thật chắc (tay ngửa, sấp sao cũng được miễn bạn thấy thoải mái), bạn dùng lực ở chân nâng tạ lúc đầu chứ không dùng lực ở lưng, khi tạ lên ngang gối thì bạn kết hợp với lưng và chân để duỗi thẳng lưng. Và khi tạ lên mức cao nhất thì bạn cong nhẹ lưng.",
         ];
         $exs[2] = [
-            'name' => "Đứng lên ngồi xuống",
+            'name' => "Squat",
             'description' => "Đứng dang 2 chân, mở rộng bằng vai, thả lỏng cơ thể, đặc biệt thư giãn vùng bụng.",
         ];
         $exs[3] = [

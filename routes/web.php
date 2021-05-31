@@ -26,3 +26,9 @@ Route::post('/login', 'Auth\AuthController@authenticate');
 Route::get('logout', 'Auth\AuthController@logout')->name('logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/exercise','HomeController@exercise')->name('exercise');
+
+// Exercise detail
+Route::get('/exercise/{exercise_name}','HomeController@exercise_detail')->name('exercise-detail');
+Route::get('/exercise-save','HomeController@exercise_save')->name('exercise-save');
+Route::get('/workout', 'HomeController@workout')->name('workout');
