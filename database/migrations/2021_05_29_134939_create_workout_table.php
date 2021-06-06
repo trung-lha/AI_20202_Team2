@@ -18,6 +18,7 @@ class CreateWorkoutTable extends Migration
             $table->unsignedInteger('exercise_id');
             $table->integer('counts');
             $table->integer('time');
+            $table->primary(['user_id', 'exercise_id']);
         });
     }
 

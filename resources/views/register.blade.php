@@ -20,7 +20,7 @@
                                 <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
                             </div>
 
-                            <form class="user" method="POST" action="{{route('register')}}">
+                            <form class="user" method="POST" action="{{route('register')}}" id="register_form">
                                 @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
@@ -71,11 +71,9 @@
                                             <input id="password-confirm" type="password" class="form-control form-control-use" name="password_confirmation" required autocomplete="new-password" placeholder="  Confirm Password" >
                                     </div>
                                 </div>
-                                <button type="submit">
-                                    <a class="btn btn-primary btn-user btn-block">
-                                        Register Account
-                                    </a>
-                                </button>
+                                <a ref="javascript:{}" onclick="document.getElementById('register_form').submit();" class="btn btn-primary btn-user btn-block">
+                                    <span style="color: black">Register</span>
+                                </a>
                             </form>
                             <hr>
                             <div class="text-center">

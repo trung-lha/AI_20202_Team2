@@ -27,22 +27,24 @@
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>No.</th>       
+                            <th>No.</th>   
                             <th>Name</th>
                             <th>Count</th>
-                            <th>Office</th>                           
+                            <th>Times</th>                           
                         </tr>
                     </tfoot>
-                    @foreach ($exercises as $key => $exer)
+                    
                     <tbody>
+                        @foreach ($exercises as $key => $eItem)
                         <tr>
                             <td>{{$key+1}}</td>
-                            <td>{{$exer->name}}</td>
-                            {{-- <td>{{$workout[$key].counts}}</td> --}}
-                            {{-- <td>{{$workout[$key].time}}</td> --}}
+                            <td>{{$eItem->name}}</td>   
+                            <td>{{$eItem->counts}}</td>
+                            <td>{{$eItem->time}}</td>
                         </tr>
+                        @endforeach
                     </tbody>
-                    @endforeach
+                    
                     
                 </table>
             </div>
@@ -52,3 +54,4 @@
 </div>
 
 @endsection
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
