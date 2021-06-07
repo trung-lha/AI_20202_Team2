@@ -14,10 +14,37 @@ class WorkoutSeeder extends Seeder
     {
         $faker =  Faker::create();
         $workout = [];
-        for($index=0;$index<10;$index++){
+        for($index=0;$index<3;$index++){
             $workout[] = [
                 'user_id' => $index+1,
-                'exercise_id' => rand(1,4),
+                'exercise_id' => 1,
+                'counts' => rand(10,100),
+                'time' => rand(1,10)
+            ];
+
+        }
+        for($index=0;$index<3;$index++){
+            $workout[] = [
+                'user_id' => $index+3,
+                'exercise_id' => 2,
+                'counts' => rand(10,100),
+                'time' => rand(1,10)
+            ];
+
+        }
+        for($index=0;$index<3;$index++){
+            $workout[] = [
+                'user_id' => $index+6,
+                'exercise_id' => 3,
+                'counts' => rand(10,100),
+                'time' => rand(1,10)
+            ];
+
+        }
+        for($index=0;$index<3;$index++){
+            $workout[] = [
+                'user_id' => $index+9,
+                'exercise_id' => 4,
                 'counts' => rand(10,100),
                 'time' => rand(1,10)
             ];
