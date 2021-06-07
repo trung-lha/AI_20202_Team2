@@ -25,7 +25,7 @@ class WorkoutSeeder extends Seeder
         }
         for($index=0;$index<3;$index++){
             $workout[] = [
-                'user_id' => $index+3,
+                'user_id' => $index+1,
                 'exercise_id' => 2,
                 'counts' => rand(10,100),
                 'time' => rand(1,10)
@@ -34,7 +34,7 @@ class WorkoutSeeder extends Seeder
         }
         for($index=0;$index<3;$index++){
             $workout[] = [
-                'user_id' => $index+6,
+                'user_id' => $index+1,
                 'exercise_id' => 3,
                 'counts' => rand(10,100),
                 'time' => rand(1,10)
@@ -43,7 +43,7 @@ class WorkoutSeeder extends Seeder
         }
         for($index=0;$index<3;$index++){
             $workout[] = [
-                'user_id' => $index+9,
+                'user_id' => $index+1,
                 'exercise_id' => 4,
                 'counts' => rand(10,100),
                 'time' => rand(1,10)
