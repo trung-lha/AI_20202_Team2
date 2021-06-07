@@ -8,7 +8,7 @@
 <script src="{{ asset('js/pose.js') }}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 @section('contents')
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4"> 
         <h1 class="h3 mb-0 text-gray-800 ml-5">Exercises - {{ $detail[0]->name }}</h1>
     </div>
     <div class="container" style="margin: 0  0 2em 10%;">
@@ -42,6 +42,7 @@
             @csrf
             <input type="hidden" id="count_save" name="counter">
             <input type="hidden" id="exercise_id" name="exercise_id" value="{{$detail[0]->exercise_id}}">
+            <input type="hidden" id="timer" name="timer">
             <a ref="javascript:{}" onclick="document.getElementById('save_form').submit();" class="btn btn-danger btn-icon-split" style="align-content: center; margin: 0 0 0 1em">
                 <span class="icon text-white-50">
                     <i class="fas fa-stopwatch"></i>
@@ -85,7 +86,6 @@
             }, 1000);
         }
 
-        const fpsControl = new FPS();
     
         // Optimization: Turn off animated spinner after its hiding animation is done.
         const spinner = document.querySelector('.loading');
