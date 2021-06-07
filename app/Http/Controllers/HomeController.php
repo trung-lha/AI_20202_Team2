@@ -42,12 +42,20 @@ class HomeController extends Controller
     {
         $detail = Exercise::where('name',$exercise_name)->get();
         // dd($detail);
-        return view('exercise\detail', compact('detail'));
+        if($detail[0]->name == 'Crunch')
+            return view('exercise\squat', compact('detail'));
+        elseif($detail[0]->name == 'Lift Weights')
+            return view('exercise\curl', compact('detail'));
+        elseif($detail[0]->name == 'Squat')
+            return view('exercise\squat', compact('detail'));
+        else
+            return view('exercise\push_up', compact('detail'));
+        // dd($detail);
     }
 
     public function exercise_save(Request $request)
     {
-        
+        // dd($request);
         $data = Workout::where([
                 ['user_id',Auth::user()->id],['exercise_id',$request->exercise_id]
             ])->get();
@@ -66,8 +74,16 @@ class HomeController extends Controller
                 ['user_id',Auth::user()->id],['exercise_id',$request->exercise_id]
             ])->update($data[0]->toArray());
         }
-        
-        // dd($data[0]);
+
+        $detail[] = [
+            'user_id' => Auth::user()->id,
+            'exercise_id' => $request->exercise_id,
+            'count' => $request->counter,
+            'time' => $request->timer,
+            'date' => date("Y-m-d"),
+        ];
+        DB::table('detai_workout')->insert($detail);
+        // dd($detail);
         return \redirect()->action([HomeController::class, 'workout']);
     }
 
@@ -80,5 +96,16 @@ class HomeController extends Controller
         
         // dd($exercises);
         return view('exercise\workout', compact('exercises'));
+    }
+
+    public function workout_detail()
+    {   
+        $exercises = DB::table('detai_workout')
+            ->leftjoin('exercises','exercises.exercise_id','=','detai_workout.exercise_id')
+            ->where('detai_workout.user_id',Auth::user()->id)
+            ->orderBy('exercises.exercise_id')->get();
+        
+        
+        return view('exercise\detail_workout', compact('exercises'));
     }
 }

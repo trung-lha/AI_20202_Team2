@@ -10,8 +10,12 @@
             <nav style="text-align: right">
                 <a href="#about" ><u>About Us</u></a>
                 <a href="#" ><u>Introduction</u></a>
+                @if(!Auth::user())
                 <a href="{{ Route('register') }}" ><u>Register</u></a>
                 <a href="{{ Route('login') }}"><u>Login</u></a>
+                @else
+                <p>Welcome {{Auth::user()->name}}</p>
+                @endif
                 </ul>
             </nav>
         </h3>

@@ -32,3 +32,4 @@ Route::get('/exercise','HomeController@exercise')->name('exercise');
 Route::get('/exercise/{exercise_name}','HomeController@exercise_detail')->name('exercise-detail');
 Route::post('/exercise-save','HomeController@exercise_save')->name('exercise-save');
 Route::get('/workout', 'HomeController@workout')->name('workout');
+Route::get('/workout-detail', 'HomeController@workout_detail')->name('workout-detail');

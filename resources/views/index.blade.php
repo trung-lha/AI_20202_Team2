@@ -11,7 +11,7 @@
                     The website counts the number of movements of each exercise that you practice every day, provides a tool
                     to help you track your training progress.
                 </i></p>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mt-3">Join with Us</a>
+            <a href="{{route('exercise')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm mt-3">Join with Us</a>
         </div>
     </div>
     <div class="row bg-light">
