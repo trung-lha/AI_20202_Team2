@@ -1,0 +1,10 @@
+*.pyc
+__pycache__
+/.vscode
+/experiments*
+!/experiments/.gitkeep
+/data
+!/data/.gitkeep
+/.vscode
+/trained_models
+!/trained_models/.gitkeep
